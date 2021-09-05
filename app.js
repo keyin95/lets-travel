@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const compression = require('compression');
-const helmet = require('helmet');
 
 var indexRouter = require('./routes/index');
 
@@ -22,7 +21,6 @@ const User = require('./models/user');
 const passport = require('passport');
 
 var app = express();
-app.use(helmet());
 // compress responses
 app.use(compression());
 
