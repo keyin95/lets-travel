@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+    h2=title 
+    hr
+    form(action="/login" method="POST")
+        .form_input 
+            label(for="email") Email:
+            input(type="email" name="email" id="email" required)
+
+        .form_input 
+            label(for="password") Password:
+            input(type="password" name="password" id="password" required)
+        
+        .form_input 
+            button(type="submit" class="button_small") CONFIRM
+        
+        

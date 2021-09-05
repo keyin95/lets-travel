@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      nav 
+        a(href="/")
+          img#logo(src = "/images/logo.png")
+        ul 
+          if !user
+            li 
+              a(href="/sign-up") sign up 
+            li 
+              a(href="/login") login
+          else
+            li 
+              a(href="/my-account") my bookings / account
+            li 
+              a(href="/logout") logout (#{user.first_name})
+      
+      .search_nav 
+        form(action="/results" method="POST")
+          .input_wrapper 
+            label(for="destination") Destination 
+            input(type="text" id="destination" name="destination" required)
+          .input_wrapper 
+            label(for="duration") Duration 
+            input(type="text" id="duration" name="duration" required)
+          .input_wrapper 
+            label(for="departure-date") Departure Date 
+            input(type="date" id="departure-date" name="dateOfDeparture" required)
+          .input_wrapper 
+            label(for="number-guests") Number of Guests 
+            input(type="number" id="number-guests" name="numberOfGuests" min=0 required)
+          .input_wrapper 
+            select(name="stars")
+              option(value="1") Min 1 start 
+              option(value="2") Min 2 start 
+              option(value="3") Min 3 start 
+              option(value="4") Min 4 start 
+              option(value="5") Min 5 start
+
+          .input_wrapper 
+            select(name="sort")
+              option(value="1") Price: Low - High
+              option(value="-1") Price: High - Low 
+          .input_wrapper 
+            button(type="submit") Search!
+      
+      - const values = Object.values(flash)
+      - const keys  = Object.keys(flash)
+
+      if keys.length > 0
+        div(class=`message message_${keys}`)
+          span= values 
+          span.close_btn(onclick="this.parentNode.remove()") &times;
+
+      img(src = "/images/beach.jpg", class = "beach")
+    block content

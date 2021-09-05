@@ -1,0 +1,9 @@
+extends layout
+include mixin/_hotel
+
+block content 
+    each hotel in allHotels
+        .hotel_wrapper 
+            +hotel(hotel)
+
+    

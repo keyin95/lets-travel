@@ -1,0 +1,238 @@
+html {
+  background: cadetblue;
+}
+
+header img {
+  height: auto;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  background: rgb(202, 238, 240);
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 1em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #4dc3ca;
+  width: 100%
+}
+
+nav ul {
+  padding: 100px 0px 0px 200px;
+}
+
+li {
+  display: inline-block;
+  margin:0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(34, 110, 161);
+  font-size: 18px;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.search_nav {
+  background: #c1e6e9;
+  padding: 0.5 em;
+}
+
+
+.search_nav > form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+
+input {
+  width: 60%;
+  left: 300px;
+  height: 20px;
+  padding: 0.5em 0;
+  margin-top: 0.3em;
+  border: 0;
+  border-radius: 5px;
+}
+
+.input_wrapper input, select {
+  margin: 0.5em 0;
+  text-align: left;
+}
+
+select, button {
+  height: 30px;
+  width: 100%;
+  border: none;
+}
+
+button {
+  background: rgb(104, 146, 194);
+  border-radius:3px;
+}
+
+img {
+  width: 100%;
+}
+
+/* CONTENT */
+/* Hotels and countries view */
+.outer_wrapper {
+  text-align: center;
+  font-size: 1em;
+}
+
+.hotel {
+  margin: 0 0 1em 0;
+}
+
+.hotel_info {
+  padding: 1em;
+}
+
+.form_input {
+  margin: 2em 0;
+}
+
+.form_input input, textarea {
+  width: 60%;
+  text-align: left;
+  padding: 5px;
+  margin: 0;
+}
+
+.form_input label {
+  display: inline-block;
+  width: 30%;
+}
+
+textarea {
+  border: none;
+  border-radius: 5px;
+}
+
+.button_small {
+  width: 100px;
+  margin: 0.5em;
+}
+
+.button {
+  background: rgb(95, 158, 160);
+  border-radius: 5px;
+  padding: 0.5em; 
+}
+
+.bookings ul {
+  margin: 2em 0;
+  padding: 10px;
+}
+
+.bookings li {
+  display: block;
+  background: rgb(181, 224, 236);
+  padding: 0.5em;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 0.5em;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.close_btn {
+  float:right;
+}
+
+.close_btn:hover{
+  cursor:pointer;
+}
+
+.message_info {
+  color: rgb(40, 92, 177);
+}
+
+.message_success{
+  color: rgb(39, 87, 39);
+}
+
+.message_error{
+  color: rgb(233, 66, 66);
+}
+
+@media (min-width: 1000px) {
+   nav {
+     flex-direction: row;
+     height: 180px;
+   }
+
+   nav a {
+     flex: 1;
+   }
+
+   nav ul {
+     flex: 2;
+     text-align: right;
+     margin-right: 1.2 em;
+     margin-bottom: 2 em;
+   }
+
+   .search_nav form {
+     flex-direction: row;
+     justify-content: center;
+     align-items: flex-end;
+   }
+
+   .input_wrapper{
+     margin: 0;
+     padding: 0.5em;
+     max-width: 400px;
+     text-align: left;
+   }
+
+   .input_wrapper label {
+     font-size:small;
+     float: top;
+   }
+
+   .outer_wrapper {
+     text-align: left;
+   }
+
+   .hotel_wrapper .hotel {
+     display: flex;
+   }
+
+   .hotel_img {
+     flex:1;
+     margin: 1em;
+   }
+
+   .hotel_info {
+     flex:1;
+     padding:0 1em;
+   }
+
+   .country_wrapper ul {
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     grid-gap: 20px;
+     text-align: center;
+   }
+
+   .hotel_order_details {
+     padding:0 1em;
+   }
+
+
+}
